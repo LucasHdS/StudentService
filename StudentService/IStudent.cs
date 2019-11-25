@@ -14,33 +14,37 @@ namespace StudentService
     {
 
         [OperationContract]
-        [WebGet(UriTemplate="getStudents")]
+        [WebInvoke(Method = "GET",
+                UriTemplate="getStudents",
+                ResponseFormat = WebMessageFormat.Json,
+                BodyStyle = WebMessageBodyStyle.Wrapped,
+                RequestFormat = WebMessageFormat.Json)]
         List<Student> GetStudents();
 
         [OperationContract]
-        [WebInvoke(UriTemplate="createStudent", RequestFormat = WebMessageFormat.Json)]
-        void CreateStudent(string name, int cpf, int tel, int courseID, int genderID);
+        [WebInvoke(UriTemplate="createStudent", 
+                RequestFormat = WebMessageFormat.Json,
+                ResponseFormat =WebMessageFormat.Json,
+                Method = "POST",
+                BodyStyle = WebMessageBodyStyle.Wrapped)]
+        void CreateStudent(Student student);
 
         [OperationContract]
-        [WebInvoke(UriTemplate = "updateStudent", RequestFormat = WebMessageFormat.Json,Method = "UPDATE")]
-        void UpdateStudent();
+        [WebInvoke(UriTemplate = "updateStudent", 
+                RequestFormat = WebMessageFormat.Json,
+                ResponseFormat = WebMessageFormat.Json,
+                Method = "PUT",
+                BodyStyle = WebMessageBodyStyle.Wrapped)]
+        void UpdateStudent(Student student);
 
         [OperationContract]
-        [WebInvoke(UriTemplate = "deleteStudent", RequestFormat = WebMessageFormat.Json,Method ="DELETE")]
-        void DeleteStudent();
+        [WebInvoke(UriTemplate = "deleteStudent/{id}", 
+                RequestFormat = WebMessageFormat.Json,
+                ResponseFormat = WebMessageFormat.Json,
+                Method ="DELETE",
+                BodyStyle = WebMessageBodyStyle.Bare)]
+        void DeleteStudent(string id);
         // TODO: Adicione suas operações de serviço aqui
     }
 
-
-    // Use um contrato de dados como ilustrado no exemplo abaixo para adicionar tipos compostos a operações de serviço.
-    [DataContract]
-    public class StudentType
-    {
-        bool boolValue = true;
-        string stringValue = "Hello ";
-
-        [DataMember]
-        public string name { get; set; }
-        
-    }
 }
