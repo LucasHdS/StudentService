@@ -15,8 +15,6 @@ namespace StudentService
             return new Student()
                     {
                         name = student.name,
-                        cpf = student.cpf,
-                        tel = student.tel,
                         courseID = student.courseID,
                         genderID = student.genderID
                     }.Save();

@@ -31,8 +31,6 @@
                     {
                         id = c.Int(nullable: false, identity: true),
                         name = c.String(),
-                        tel = c.String(maxLength: 15),
-                        cpf = c.String(maxLength: 15),
                         courseID = c.Int(nullable: false),
                         genderID = c.Int(nullable: false),
                     })

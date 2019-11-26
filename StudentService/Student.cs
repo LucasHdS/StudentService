@@ -19,14 +19,6 @@ namespace StudentService
         public string name { get; set; }
 
         [DataMember]
-        [StringLength(15)]
-        public string tel { get; set; }
-
-        [DataMember]
-        [StringLength(15)]
-        public string cpf { get; set; }
-
-        [DataMember]
         [ForeignKey("Course")]
         public int courseID { get; set; }
 
@@ -63,8 +55,6 @@ namespace StudentService
                 var student = query.FirstOrDefault();
 
                 student.name = _student.name;
-                student.cpf = _student.cpf;
-                student.tel = _student.tel;
                 student.courseID = _student.courseID;
                 student.genderID = _student.genderID;
 

@@ -83,9 +83,9 @@
     <Compile Include="BaseContext.cs" />
     <Compile Include="Course.cs" />
     <Compile Include="Gender.cs" />
-    <Compile Include="Migrations\201911252320292_schoolMigration.cs" />
-    <Compile Include="Migrations\201911252320292_schoolMigration.designer.cs">
-      <DependentUpon>201911252320292_schoolMigration.cs</DependentUpon>
+    <Compile Include="Migrations\201911260046520_schoolMigration.cs" />
+    <Compile Include="Migrations\201911260046520_schoolMigration.designer.cs">
+      <DependentUpon>201911260046520_schoolMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ServiceStudent.svc.cs">
@@ -97,6 +97,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -105,8 +106,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201911252320292_schoolMigration.resx">
-      <DependentUpon>201911252320292_schoolMigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201911260046520_schoolMigration.resx">
+      <DependentUpon>201911260046520_schoolMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

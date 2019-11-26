@@ -13,7 +13,7 @@ namespace StudentService.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201911252320292_schoolMigration"; }
+            get { return "201911260046520_schoolMigration"; }
         }
         
         string IMigrationMetadata.Source
