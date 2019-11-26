@@ -19,10 +19,12 @@ namespace StudentService
         public string name { get; set; }
 
         [DataMember]
-        public int tel { get; set; }
+        [StringLength(15)]
+        public string tel { get; set; }
 
         [DataMember]
-        public int cpf { get; set; }
+        [StringLength(15)]
+        public string cpf { get; set; }
 
         [DataMember]
         [ForeignKey("Course")]
@@ -38,11 +40,12 @@ namespace StudentService
         [DataMember]
         public virtual Course Course { get; set; }
 
-        public void Save()
+        public Student Save()
         {
             var db = new BaseContext();
             db.Students.Add(this);
             db.SaveChanges();
+            return this;
         }
 
         public static List<Student> List()

@@ -83,9 +83,9 @@
     <Compile Include="BaseContext.cs" />
     <Compile Include="Course.cs" />
     <Compile Include="Gender.cs" />
-    <Compile Include="Migrations\201911251714001_FixedMigration3.cs" />
-    <Compile Include="Migrations\201911251714001_FixedMigration3.designer.cs">
-      <DependentUpon>201911251714001_FixedMigration3.cs</DependentUpon>
+    <Compile Include="Migrations\201911252320292_schoolMigration.cs" />
+    <Compile Include="Migrations\201911252320292_schoolMigration.designer.cs">
+      <DependentUpon>201911252320292_schoolMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="ServiceStudent.svc.cs">
@@ -105,8 +105,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201911251714001_FixedMigration3.resx">
-      <DependentUpon>201911251714001_FixedMigration3.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201911252320292_schoolMigration.resx">
+      <DependentUpon>201911252320292_schoolMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
@@ -124,11 +124,10 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>59868</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:5000</IISUrl>
+          <IISUrl>http://localhost:59868/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
-          <CustomServerUrl>
-          </CustomServerUrl>
+          <CustomServerUrl>http://localhost:5000</CustomServerUrl>
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>

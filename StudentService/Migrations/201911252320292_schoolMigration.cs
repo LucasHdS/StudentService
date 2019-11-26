@@ -3,7 +3,7 @@
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class FixedMigration3 : DbMigration
+    public partial class schoolMigration : DbMigration
     {
         public override void Up()
         {
@@ -31,8 +31,8 @@
                     {
                         id = c.Int(nullable: false, identity: true),
                         name = c.String(),
-                        tel = c.Int(nullable: false),
-                        cpf = c.Int(nullable: false),
+                        tel = c.String(maxLength: 15),
+                        cpf = c.String(maxLength: 15),
                         courseID = c.Int(nullable: false),
                         genderID = c.Int(nullable: false),
                     })

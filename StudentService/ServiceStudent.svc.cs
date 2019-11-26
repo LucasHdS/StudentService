@@ -1,21 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ServiceModel.Activation;
 
 namespace StudentService
 {
     // OBSERVAÇÃO: Você pode usar o comando "Renomear" no menu "Refatorar" para alterar o nome da classe "Service1" no arquivo de código, svc e configuração ao mesmo tempo.
     // OBSERVAÇÃO: Para iniciar o cliente de teste do WCF para testar esse serviço, selecione Service1.svc ou Service1.svc.cs no Gerenciador de Soluções e inicie a depuração.
+    [AspNetCompatibilityRequirements(
+        RequirementsMode = AspNetCompatibilityRequirementsMode.Allowed)]
     public class ServiceStudent:IStudent
     {
-        public void CreateStudent(Student student)
+        public Student CreateStudent(Student student)
         {
-            new Student()
-            {
-                name = student.name,
-                cpf = student.cpf,
-                courseID = student.courseID,
-                genderID = student.genderID
-            }.Save();
+            return new Student()
+                    {
+                        name = student.name,
+                        cpf = student.cpf,
+                        tel = student.tel,
+                        courseID = student.courseID,
+                        genderID = student.genderID
+                    }.Save();
         }
 
         public void DeleteStudent(string id)

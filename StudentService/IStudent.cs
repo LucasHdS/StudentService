@@ -27,7 +27,7 @@ namespace StudentService
                 ResponseFormat =WebMessageFormat.Json,
                 Method = "POST",
                 BodyStyle = WebMessageBodyStyle.Wrapped)]
-        void CreateStudent(Student student);
+        Student CreateStudent(Student student);
 
         [OperationContract]
         [WebInvoke(UriTemplate = "updateStudent", 
