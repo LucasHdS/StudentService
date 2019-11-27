@@ -42,9 +42,27 @@ namespace StudentService
 
         public static List<Student> List()
         {
-            var db = new BaseContext();
-            return db.Students.ToList();
-        }
+				using (var context = new BaseContext())
+				{
+
+					var query = (from a in context.Students select a).Distinct();
+
+					List<Student> students = new List<Student>();
+
+					query.ToList().ForEach(student =>
+					{
+						students.Add(new Student{
+							Course = student.Course,
+							courseID = student.courseID,
+							Gender = student.Gender,
+							genderID = student.genderID,
+							id = student.id,
+							name = student.name
+						});
+					});
+					return students;
+				}
+			}
 
         public static void Update(Student _student)
         {

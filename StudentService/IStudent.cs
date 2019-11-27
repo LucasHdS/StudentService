@@ -5,11 +5,12 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.ServiceModel.Web;
 using System.Text;
+using System.Web.Http.Cors;
 
 namespace StudentService
 {
-    // OBSERVAÇÃO: Você pode usar o comando "Renomear" no menu "Refatorar" para alterar o nome da interface "IService1" no arquivo de código e configuração ao mesmo tempo.
-    [ServiceContract]
+	// OBSERVAÇÃO: Você pode usar o comando "Renomear" no menu "Refatorar" para alterar o nome da interface "IService1" no arquivo de código e configuração ao mesmo tempo.
+	[ServiceContract(Namespace = "JsonpAjaxService")]
     public interface IStudent
     {
 
@@ -20,9 +21,9 @@ namespace StudentService
                 BodyStyle = WebMessageBodyStyle.Wrapped,
                 RequestFormat = WebMessageFormat.Json)]
         List<Student> GetStudents();
-
-        [OperationContract]
-        [WebInvoke(UriTemplate="createStudent", 
+		
+		  [OperationContract]
+		  [WebInvoke(UriTemplate="createStudent", 
                 RequestFormat = WebMessageFormat.Json,
                 ResponseFormat =WebMessageFormat.Json,
                 Method = "POST",
